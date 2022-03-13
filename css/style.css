@@ -1,0 +1,181 @@
+@charset "UTF-8";
+
+body{
+  margin: 0;
+  overflow: hidden;
+  background-image: url(../img/cosmo.jpg);
+  background-size: 200%;
+  font-family: 'UD デジタル 教科書体 N-B';
+}
+
+.hidden{
+  display: none;
+}
+
+.clear{
+  opacity: 0;
+}
+
+#mask{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 3;
+}
+
+#mask.clear{
+  transition: all 1.5s;
+}
+
+button{
+  position: absolute;
+  top: 500px;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  z-index: 4;
+}
+
+main{
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+main header{
+  position: relative;
+  text-align: center;
+  margin-top: 16px;
+  z-index: 4;
+  transform: translate(-1000px, 250px);
+}
+
+main header.move{
+  animation-name: move;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+main header.jump{
+  transform: translateY(250px);
+  animation-name: jump;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move{
+  30% {
+    transform: translate(-100px, 250px);
+  }
+  50% {
+    transform: translate(50px, 248px) rotate(45deg);
+  }
+  90% {
+    transform: translate(70px, 245px) rotate(50deg);
+  }
+  100% {
+    transform: translateY(250px);
+  }
+}
+
+@keyframes jump{
+  50%{
+    transform: translateY(250px) scaleY(.3);
+    transform-origin: bottom;
+  }
+  60%{
+    transform: translateY(-200px) scale(1);
+  }
+  90%{
+    transform: scaleY(.3);
+    transform-origin: bottom;
+  }
+  100%{
+    transform: none;
+  }
+}
+
+main header.skip{
+  transform: none;
+}
+
+main nav{
+  position: relative;
+}
+
+main nav ul{
+  list-style: none;
+  margin-left: 36px;
+  padding: 0;
+}
+
+main nav li{
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 24px;
+  width: 280px;
+  line-height: 2.5;
+  text-align: center;
+  border-radius: 24px;
+  border: 4px solid #83c508;
+  background-color: #0b8520;
+  z-index: 2;
+  transform: translateX(-500px);
+  transition: transform 1s;
+}
+
+main nav li.show{
+  transform: none;
+}
+
+main nav li.stop{
+  transition: none;
+}
+
+main nav li:hover{
+  transform: scale(1.2);
+}
+
+main nav li a{
+  text-decoration: none;
+  color: #fff;
+}
+
+main article{
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+
+main article img{
+  width: 100%;
+  height: 100%;
+}
+
+footer{
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  width: 500px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 8px;
+  background-color: #33241b;
+  border: 4px dashed #b87247;
+  outline: 8px solid #dfcb8b;
+}
+
+footer p{
+  line-height: 2;
+  margin: 8px 8px 0;
+  color: #fff;
+}
