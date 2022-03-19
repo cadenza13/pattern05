@@ -117,11 +117,5 @@
       contents.classList.add('stop');
       contents.classList.add('show');
     });
-    // setTimeout(skipsLogo, 100);
   });
-
-  // function skipsLogo(){
-  //   logo.classList.add('skip');
-  //   logo.classList.remove('hidden');
-  // }
 }
