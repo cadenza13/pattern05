@@ -66,7 +66,7 @@ main header.jump{
   transform: translateY(250px);
   animation-name: jump;
   animation-duration: 3s;
-  animation-timing-function: ease-out;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
 
@@ -93,7 +93,10 @@ main header.jump{
   60%{
     transform: translateY(-200px) scale(1);
   }
-  90%{
+  70%{
+    transform: none;
+  }
+  80%{
     transform: scaleY(.3);
     transform-origin: bottom;
   }
@@ -129,11 +132,28 @@ main nav li{
   background-color: #0b8520;
   z-index: 2;
   transform: translateX(-500px);
-  transition: transform 1s;
+  transition: transform .7s, opacity .4s;
+}
+
+main nav li.delay-a{
+  transition-delay: .1s;
+}
+
+main nav li.delay-b{
+  transition-delay: .2s;
+}
+
+main nav li.delay-c{
+  transition-delay: .3s;
+}
+
+main nav li.delay-d{
+  transition-delay: .4s;
 }
 
 main nav li.show{
   transform: none;
+  opacity: 1;
 }
 
 main nav li.stop{
@@ -151,7 +171,7 @@ main nav li a{
 
 main article{
   position: absolute;
-  top: 50px;
+  bottom: 0;
   right: 0;
 }
 
@@ -178,4 +198,18 @@ footer p{
   line-height: 2;
   margin: 8px 8px 0;
   color: #fff;
+}
+
+@media (min-width:1000px){
+  main nav li{
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}
+
+@media (max-width:450px){
+  main nav li{
+    transform: translateY(30px);
+    opacity: 0;
+  }
 }
