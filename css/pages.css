@@ -6,7 +6,7 @@ body{
 }
 
 .container{
-  width: 70%;
+  width: 80%;
   max-width: 700px;
   margin: 30px auto;
   text-align: center;
@@ -33,11 +33,34 @@ section + section{
   left: 32px;
 }
 
+.third img{
+  position: absolute;
+  top: -60px;
+  right: 32px;
+}
+
 h1{
   width: 250px;
   margin: 12px auto 24px;
   line-height: 2;
   background-color: #bbb;
   cursor: pointer;
-  box-shadow: 8px 8px #777;
+  border-radius: 32px;
+  box-shadow: 0 8px #777;
+}
+
+p{
+  line-height: 2;
+  margin: 12px 24px;
+  text-align: left;
+}
+
+@media (max-width:450px){
+  h1{
+    font-size: 20px;
+  }
+
+  p{
+    font-size: 14px;
+  }
 }

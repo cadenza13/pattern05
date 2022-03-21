@@ -11,7 +11,7 @@
     n.addEventListener('mouseover', () =>{
       switch(index){
         case 0:
-          p.textContent = 'ポポラマーマ';
+          p.textContent = '管理人『ベシ』の簡単なプロフィールを載せています。';
           break;
         case 1:
           p.textContent = '自分';
