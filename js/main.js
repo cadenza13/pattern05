@@ -1,6 +1,7 @@
 'use strict';
 
 {
+  const body = document.querySelector('body');
   const li = document.querySelectorAll('li');
   const p = document.querySelector('p');
   const mask = document.getElementById('mask');
@@ -11,26 +12,32 @@
     n.addEventListener('mouseover', () =>{
       switch(index){
         case 0:
-          p.textContent = '管理人『ベシ』の簡単なプロフィールを載せています。';
+          p.textContent = '当サイトの管理人『ベシ』の簡単なプロフィールを載せています。';
           break;
         case 1:
-          p.textContent = '自分';
+          p.textContent = 'WEBデザインなど、お仕事の依頼はこちらからお願いします。';
           break;
         case 2:
-          p.textContent = 'グループ';
+          p.textContent = '趣味でゲームを作ったりしてます。暇つぶしにどうぞ。';
           break;
         case 3:
-          p.textContent = 'ナイスショット';
+          p.textContent = '個人ブログを始めてみました。';
           break;
         case 4:
-          p.textContent = 'ツイッター';
+          p.textContent = 'このサイトの詳細や、おすすめサイトのリンク集を載せています。';
           break;
       }
     });
   });
 
   navigate.addEventListener('mouseover', () =>{
-    p.textContent = '私はナビゲーターです。';
+    if(Hours >= 4 && Hours <= 10){
+      p.textContent = 'おはようございます！';
+    } else if(Hours >= 11 && Hours <= 17){
+      p.textContent = 'こんにちは！';
+    } else{
+      p.textContent = 'こんばんは！';
+    }
   });
 
   // 以下,表示直後の演出
@@ -81,14 +88,10 @@
   const d = new Date();
   let Hours = d.getHours();
   
-  if(Hours >= 18 && Hours <= 23){
-    p.textContent = 'こんばんは！';
-  } else if(Hours >= 11 && Hours <= 17){
-    p.textContent = 'こんにちは！';
-  } else if(Hours >= 4 && Hours <= 10){
-    p.textContent = 'おはようございます！';
+  if(Hours >= 4 && Hours <= 17){
+    body.classList.add('morning');
   } else{
-    p.textContent = 'こんばんは！';
+    body.classList.remove('morning');
   }
 
   // 以下,コンテンツを表示させるまでの処理

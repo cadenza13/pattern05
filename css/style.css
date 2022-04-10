@@ -2,9 +2,12 @@
 
 body{
   margin: 0;
-  background-image: url(../img/cosmo.jpg);
-  background-size: 200%;
+  background-image: url(../img/night.png);
   font-family: 'UD デジタル 教科書体 N-B';
+}
+
+body.morning{
+  background-image: url(../img/morning.png);
 }
 
 .hidden{
@@ -120,7 +123,8 @@ main nav ul{
 
 main nav li{
   position: relative;
-  font-size: 20px;
+  width: 280px;
+  /* font-size: 20px;
   font-weight: bold;
   margin-top: 24px;
   width: 280px;
@@ -128,7 +132,7 @@ main nav li{
   text-align: center;
   border-radius: 24px;
   border: 4px solid #83c508;
-  background-color: #0b8520;
+  background-color: #0b8520; */
   z-index: 2;
   transform: translateX(-500px);
   transition: transform .7s, opacity .4s;
@@ -164,8 +168,18 @@ main nav li:hover{
 }
 
 main nav li a{
+  display: block;
   text-decoration: none;
   color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 24px;
+  width: 280px;
+  line-height: 2.5;
+  text-align: center;
+  border-radius: 24px;
+  border: 4px solid #83c508;
+  background-color: #0b8520;
 }
 
 main article{
@@ -210,6 +224,10 @@ footer p{
   }
 
   main nav li{
+    width: 180px;
+  }
+
+  main nav li a{
     font-size: 14px;
     margin-top: 16px;
     width: 180px;
